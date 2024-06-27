@@ -18,7 +18,8 @@ module.exports.registerUser = async function (req, res) {
                 let token = generateToken(user);
                 res.cookie("token", token, { httpOnly: true });
 
-                res.send("User created successfully");
+                req.flash('success', 'Register successful.');
+                res.redirect('/shop');
             });
         });
     } catch (err) {

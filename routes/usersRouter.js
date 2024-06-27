@@ -3,7 +3,8 @@ const { registerUser, loginUser, logout } = require("../controllers/authControll
 const router = express.Router();
 
 router.get("/", function (req, res) {
-    res.send("User route working");
+    // res.send("User route working");
+    res.redirect("/index");
 });
 
 router.post("/register", registerUser);
